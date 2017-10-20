@@ -8,6 +8,7 @@ RUN yum install docker-compose-1.9.0 -y
 RUN yum install python-devel -y
 RUN yum install gcc -y
 RUN yum install libffi-devel -y
+RUN yum install jq -y
 RUN pip install --upgrade pip
 RUN pip install msrestazure
 RUN pip install 'azure==2.0.0rc6'
