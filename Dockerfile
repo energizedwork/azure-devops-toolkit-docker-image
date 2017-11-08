@@ -15,6 +15,7 @@ RUN pip install 'azure==2.0.0rc6'
 RUN pip install 'azure-keyvault==0.3.4'
 RUN pip install versioning
 RUN pip install packaging
+RUN pip install 'https://github.com/energizedwork/azure-log-analytics-alerts-cli/zipball/master'
 RUN yum clean all
 
 RUN mkdir -p /tmp/working && cd /tmp/working
