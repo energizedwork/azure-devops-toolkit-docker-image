@@ -17,7 +17,6 @@ RUN pip install 'azure-keyvault==0.3.4'
 RUN pip install versioning
 RUN pip install packaging
 RUN pip install 'https://github.com/energizedwork/azure-log-analytics-alerts-cli/zipball/master'
-RUN yum clean all
 
 RUN mkdir -p /tmp/working && cd /tmp/working
 
@@ -59,3 +58,5 @@ RUN yum install gcc libffi-devel python-devel openssl-devel -y && \
     echo "------------------ Azure CLI Successfully Installed ------------------"
 
 ENV PATH="/opt/mssql-tools/bin:/var/lib/terraform:/root/bin:${PATH}"
+
+RUN yum clean all
