@@ -10,7 +10,8 @@ RUN yum install gcc -y
 RUN yum install libffi-devel -y
 RUN yum install jq -y
 RUN pip install --upgrade pip
-RUN pip install msrestazure
+RUN pip install --upgrade setuptools
+RUN pip install 'msrestazure==0.4.16'
 RUN pip install 'azure==2.0.0rc6'
 RUN pip install 'azure-keyvault==0.3.4'
 RUN pip install versioning
