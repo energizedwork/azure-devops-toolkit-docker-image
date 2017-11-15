@@ -1,4 +1,4 @@
-FROM centos7
+FROM centos:7
 
 RUN curl https://packages.microsoft.com/config/rhel/7/prod.repo > /etc/yum.repos.d/msprod.repo
 RUN sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
@@ -24,7 +24,7 @@ RUN pip install 'azure-keyvault==0.3.4'
 RUN pip install versioning
 RUN pip install packaging
 
-RUN pip install 'https://github.com/energizedwork/azure-log-analytics-alerts-cli/archive/0.1.5.zip '
+RUN pip install 'https://github.com/energizedwork/azure-log-analytics-alerts-cli/archive/0.1.6.zip '
 RUN az-la-cli version && echo "------------------ Azure Log Analytics CLI Successfully Installed ------------------"
 
 RUN mkdir -p /tmp/working && cd /tmp/working
