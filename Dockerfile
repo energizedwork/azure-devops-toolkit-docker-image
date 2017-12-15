@@ -41,6 +41,13 @@ RUN mkdir -p /var/lib/terraform && \
     /var/lib/terraform/terraform --version && \
     echo "------------------ Terraform Successfully Installed ------------------"
 
+RUN mkdir -p ~/.terraform.d/plugins/linux_amd64 && \
+    wget https://releases.hashicorp.com/terraform-provider-azurerm/1.0.0/terraform-provider-azurerm_1.0.0_linux_amd64.zip && \
+    unzip terraform-provider-azurerm_1.0.0_linux_amd64.zip && \
+    mv terraform-provider-azurerm_v1.0.0_x4 ~/.terraform.d/plugins/linux_amd64 && \
+    rm terraform-provider-azurerm_1.0.0_linux_amd64.zip && \
+    echo "------------------ Terraform AzureRM Provider Successfully Installed ------------------"
+
 RUN yum install git -y
 RUN git --version && \
     echo "------------------ Git Successfully Installed ------------------"
