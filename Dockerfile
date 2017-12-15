@@ -35,7 +35,7 @@ RUN az --version && \
     echo "------------------ Azure CLI Successfully Installed ------------------"
 
 RUN mkdir -p /var/lib/terraform && \
-    curl https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip --output terraform.zip && \
+    curl https://releases.hashicorp.com/terraform/0.11.0/terraform_0.11.0_linux_amd64.zip --output terraform.zip && \
     unzip terraform.zip -d /var/lib/terraform && \
     rm terraform.zip && \
     /var/lib/terraform/terraform --version && \
